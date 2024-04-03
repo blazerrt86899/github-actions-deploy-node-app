@@ -11,7 +11,7 @@ jobs:
         runs-on: [ubuntu-latest]
 
         environment: testing
-        
+
         steps:
             - name: Checkout Source Code
               uses: actions/checkout@v3
@@ -41,7 +41,7 @@ jobs:
             - name: Pull Image from Docker Hub
               run: docker pull blazerrt86899/nodejs-app:latest
 
-            - name: Delete Old Container
+            - name: Delete Old Container if available
               run: docker rm -f nodejs-app-container
 
             - name: Run Docker Container
